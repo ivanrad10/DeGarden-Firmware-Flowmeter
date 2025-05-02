@@ -1,9 +1,9 @@
-use esp_hal::rtc_cntl::sleep::GpioWakeupSource;
+use esp_hal::gpio::WakeEvent;
 use esp_hal::reset;
-use esp_hal::gpio::{WakeEvent};
+use esp_hal::rtc_cntl::sleep::GpioWakeupSource;
 
-use crate::board::timer::with_rtc;
 use crate::board::io::with_gpio0;
+use crate::board::timer::with_rtc;
 
 // Enter sleep
 pub fn enter() -> ! {

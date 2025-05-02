@@ -8,14 +8,14 @@ firmware/
 ├── .cargo/  
 │   └── config.toml # Custom options for cargo builds (target, runner, etc.)  
 ├── src/  
-│   ├── communication/ # Handles Wi-Fi  
-│   │   ├── mod.rs  
-│   │   ├── network.rs  
-│   │   └── wifi.rs  
 │   ├── board/ # Sensor and timing logic  
 │   │   ├── mod.rs  
 │   │   ├── sensor.rs  
 │   │   └── timer.rs  
+│   ├── communication/ # Handles Wi-Fi  
+│   │   ├── mod.rs  
+│   │   ├── network.rs  
+│   │   └── wifi.rs  
 │   ├── power/ # Sleep and wakeup logic  
 │   │   ├── mod.rs  
 │   │   └── sleep.rs  
@@ -37,4 +37,5 @@ firmware/
 - **Rust Embedded**: Uses `no_std`, `esp-hal`, and `esp-backtrace` for bare-metal reliability.
 
 ## Usage
-Flash firmware with `cargo run`.
+Build project with `DEVICE_ID="****" cargo build --release`, and run it with `espflash flash target/riscv32imc-unknown-none-elf/release/firmware --monitor`.
+This way you can build this firmware on server, and flash it locally on end-user machine with `espflash flash firmware --monitor`.

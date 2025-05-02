@@ -55,16 +55,18 @@ fn main() -> ! {
     let value = board::sensor::get_measurement();
     let msg = util::message::make_msg(start, stop, value);
 
-    // Send data package
-    comms::send(
-        &mut timg0,
-        &mut rng,
-        radio_clk,
-        &mut wifi,
-        &clocks,
-        &delay,
-        msg.as_str(),
-    );
+    if value != 0.0 {
+        // Send data package
+        comms::send(
+            &mut timg0,
+            &mut rng,
+            radio_clk,
+            &mut wifi,
+            &clocks,
+            &delay,
+            msg.as_str(),
+        );
+    }
 
     // Go to sleep
     power::sleep::configure_wakeup();

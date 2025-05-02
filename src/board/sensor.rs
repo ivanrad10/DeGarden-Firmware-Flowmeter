@@ -1,5 +1,5 @@
-use critical_section::Mutex;
 use core::cell::RefCell;
+use critical_section::Mutex;
 
 static ISR_COUNT: Mutex<RefCell<u64>> = Mutex::new(RefCell::new(0));
 const FLOW_RESOLUTION: f64 = 2.25;
