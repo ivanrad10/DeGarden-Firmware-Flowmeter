@@ -8,7 +8,7 @@ firmware/
 ├── .cargo/  
 │   └── config.toml # Custom options for cargo builds (target, runner, etc.)  
 ├── src/  
-│   ├── communication/ # Handles Wi-Fi
+│   ├── communication/ # Handles Wi-Fi  
 │   │   ├── mod.rs  
 │   │   ├── network.rs  
 │   │   └── wifi.rs  
